@@ -1,0 +1,157 @@
+/******************************* :ROOT ********************************/
+
+:root {
+
+    /* HEIGHT, WIDTH, MARGIN, PADDING */
+        --margin-body: 0;
+
+        --width-container: 50%;
+            --margin-container: 40px auto;
+            --padding-container: 40px;
+
+        --width-input: calc(100% - (2 * var(--padding-input)));
+            --margin-input-top: 20px;
+            --margin-input-bottom: 40px;
+            --padding-input: 10px;
+
+        --padding-ul: 0;
+
+        --margin-li: 5px 5px;
+        --padding-li: 10px;
+
+        --width-li-button: 25px;
+        --height-li-button: 25px;
+            --margin-li-button: 0;
+
+
+    /* COLORS */
+        --color-0: hsl(0, 0%, 0%);
+        --color-50: hsl(0, 0%, 50%);
+        --color-90: hsl(0, 0%, 90%);
+        --color-100: hsl(0, 0%, 100%);
+        --color-editTask: hsl(100, 100%, 65%);
+        --color-deleteTask: hsl(0, 100%, 65%);
+    
+
+    /* FONT */
+        --font-family: sans-serif;
+        --font-size: 14px;
+}
+
+/******************************** BODY ********************************/
+
+body {
+    margin: var(--margin-body);
+    background-color: var(--color-0);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+/***************************** .CONTAINER *****************************/
+
+.container {
+    width: var(--width-container);
+    margin: var(--margin-container);
+    padding: var(--padding-container);
+    background-color: var(--color-90);
+    border-radius: 30px;
+    text-align: center;
+}
+
+/********************************* H1 *********************************/
+
+h1 {
+
+}
+
+/******************************* INPUT ********************************/
+
+input {
+    width: var(--width-input);
+    margin-top: var(--margin-input-top);
+    margin-bottom: var(--margin-input-bottom);
+    padding: var(--padding-input);
+    background-color: var(--color-100);
+    border: none;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--color-50);
+}
+
+input:hover {
+    box-shadow: 0px 0px 10px var(--color-50);
+}
+
+input:focus {
+    outline: 3px solid var(--color-50);
+}
+
+/********************************* UL *********************************/
+
+ul {
+    list-style-type: none;
+    padding: var(--padding-ul);
+}
+
+/********************************* LI *********************************/
+
+li {
+    margin: var(--margin-li);
+    padding: var(--padding-li);
+    background-color: var(--color-100);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    align-items: baseline;
+}
+
+li:hover {
+    cursor: grab;
+    box-shadow: 0px 0px 5px var(--color-50);
+}
+
+li:hover > button {
+    visibility: visible;
+}
+
+li > button {
+    width: var(--width-li-button);
+    height: var(--height-li-button);
+    margin: var(--margin-li-button);
+    background-color: var(--color-100);
+    visibility: hidden;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+}
+
+li > button:hover {
+    color: var(--color-100);
+}
+
+/***************************** .EDITTASK ******************************/
+
+.editTask {
+    color: var(--color-editTask);
+}
+
+.editTask:hover {
+    background-color: var(--color-editTask);
+}
+
+/**************************** .DELETETASK *****************************/
+
+.deleteTask {
+    color: var(--color-deleteTask);
+}
+
+.deleteTask:hover {
+    background-color: var(--color-deleteTask);
+}
+
+/***************************** .DRAGGING ******************************/
+
+.dragging {
+    cursor: grabbing;
+    opacity: 0;
+}
